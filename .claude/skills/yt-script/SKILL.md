@@ -25,7 +25,7 @@ python3 hookscore.py --hook "one line"      # score a single one
    on camera, the words they never use, who they are talking to, what they will not claim. If it
    does not exist, ask for **three of their own videos**, read or transcribe them, infer the voice,
    and write the file. A script in the wrong voice is worse than no script, because they have to
-   read it out loud.
+   read it out loud, or have their cloned voice read it.
 2. Never invent a number, a result or a source. If a figure would strengthen it and you do not have
    one, ask for it or write the line without it.
 
@@ -51,6 +51,12 @@ click the title promised, open a question the viewer cannot close, and prove the
 - the script, beat by beat, with `[ON SCREEN: ...]` on every beat
 - the runtime estimate at 150 words per minute
 - one line naming which formula the winning hook used and why it fits this idea
+- if `voice.md` says the narration is an AI voice (e.g. an ElevenLabs clone), a **narration
+  block** as well: the spoken words only, ready to paste into the voice tool. No `[ON SCREEN]`
+  lines, beat labels or stage directions in it. Spell out numbers, symbols and acronyms the way
+  they should be said, apply the pronunciation list from `voice.md`, and mark pauses in the syntax
+  `voice.md` names for that model (default: `<break time="0.8s" />`). The `[ON SCREEN]` notes stay
+  in the beat-by-beat script, which becomes the shot list.
 
 ## The gate
 

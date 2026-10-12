@@ -31,3 +31,16 @@ skills refuse them for you instead of you catching it in the edit.
 
 Length, how a video opens, whether there is an intro, whether you swear, whether you appear on
 camera, what the desk looks like.
+
+## Voiceover
+
+How the words get spoken. Delete this section if you record yourself.
+
+- **Narration:** my own cloned voice in ElevenLabs. I do not record myself; every script is read by
+  the clone.
+- **ElevenLabs model:** (e.g. Multilingual v2, Turbo v2.5, or v3)
+- **Pauses:** (v2 / Turbo: `<break time="0.8s" />` tags. v3: punctuation, ellipses and audio tags
+  like `[pause]`.)
+- **Pronunciation:** names, brands and jargon the clone gets wrong, with how to spell them so it
+  says them right (e.g. "SQL" -> "sequel").
+- **Delivery notes:** pace, energy, anything the clone does that I keep fixing.
