@@ -14,10 +14,12 @@ The voice-over for one restoration video. Not a talking-head script, not a hook 
 
 ## Read first
 
-1. `youtube/voice.md` (repo root; or `~/.claude/youtube/voice.md`): voice, narration rules, audio mix,
-   ElevenLabs settings, skill rules. It wins over anything here.
-2. `youtube/production-rules.md`: the project's status, rooms, crews and reveals.
-3. Every file in `youtube/narrations/`: past narrations. Nothing in them may be reused.
+1. `voice.md`: voice, narration rules, audio mix, ElevenLabs settings, skill rules. It wins over
+   anything here. Look in `youtube/voice.md` (repo), then `~/.claude/youtube/voice.md`, then the
+   copy bundled in this skill folder (used in Claude chat, where there is no repo).
+2. `production-rules.md`: the project's status, rooms, crews and reveals. Same lookup order.
+3. Past narrations: every file in `youtube/narrations/`, or, in Claude chat, any narration the user
+   pastes or uploads. Nothing in them may be reused. If none are available, ask for them.
 
 ## What you need before writing
 
