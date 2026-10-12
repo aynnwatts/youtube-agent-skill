@@ -90,20 +90,50 @@ heading.
 
 ## Titles and descriptions
 
-- No "101-Year-Old" formula. Honest AI-imagined framing, varied structure.
-- Description: AI disclosure near the top, chapters, at most 8 hashtags.
-- Data note: the "Abandoned... for 100 Years" / "Forgotten" titles got the most views; the two titles
-  that open with "AI-Imagined" got the fewest. Keep the disclosure honest, but it does not have to be
-  the first words of the title. The description and the narration can carry it.
+- **Titles must never claim or imply real footage of a real place.** No "found", "discovered",
+  "real", "footage", "caught on camera", no real place names presented as the actual location.
+- The AI disclosure lives in the description and the narration, not the title. No need to open the
+  title with "AI-Imagined".
+- No "101-Year-Old" formula. Varied structure, never a reused title pattern.
+- **Every description carries an "AI-assisted restoration" disclosure, near the top**, plus chapters
+  and at most 8 hashtags.
+- Data note: "Abandoned... for 100 Years" / "Forgotten" titles got the most views; the two titles
+  opening with "AI-Imagined" got the fewest.
 
 ## Voiceover
 
 - **Narration:** ElevenLabs Voice Design voice ("Female voice 4"): realistic, calm female
   documentary narrator, native English, age 35-42, studio quality.
-- **Settings:** speed 0.92, stability 50%, similarity 75%, style 0-10%, speaker boost on,
-  guidance scale ~32%, loudness default. (The 3 sample clips were rendered at speed 1.0.)
+- **Settings:** speed **0.92 (UNCONFIRMED: the 3 sample clips were rendered at 1.0; awaiting the
+  user's choice)**, stability 50%, similarity 75%, style 0-10%, speaker boost on, guidance scale
+  ~32%, loudness default.
 - **ElevenLabs model:** "v4" from the file names — confirm.
 - **Pacing (measured from 3 sample clips):** phrases of ~2-2.5 s with 0.3-0.55 s gaps. Short,
   punchy sentences, one image per line.
 - **Pauses:** (confirm syntax for the model)
 - **Pronunciation:** Kabuto, hammam, arabesque, saguaro, orrery... (add any the voice gets wrong)
+
+## Skill rules
+
+Before adding or changing any skill, check it against my video direction:
+- My channel: AI-imagined restoration of abandoned buildings, exterior first, then room by room.
+- Style: calm documentary narration, sparse lines (one 12-16 word line per 8-second Veo clip),
+  silence while the crew works, music on intros and reveals, work sounds on restoration clips.
+- Every video must be unique: new wording, new crew colours, new reveal styles. No reused templates.
+- AI use is always disclosed honestly. No title or text may suggest real footage of a real place.
+
+ONLY add a skill if it does at least one of these:
+- Makes my narration, titles, or descriptions better while following my rules
+- Helps me avoid repeating anything from past videos
+- Speeds up my Image/Veo prompt work without changing my style
+- Helps me prepare for my monetization reapplication (Dec 25)
+
+NEVER add a skill that:
+- Writes talking-head scripts, hype hooks, or clickbait
+- Auto-uploads, mass-produces Shorts, or reuses scripts/titles
+- Changes my audio mix, narration style, or video format
+- Hides or weakens the AI disclosure
+
+If a skill is partly useful, keep only the useful part and remove the rest.
+If you're not sure, ask me before adding it. Don't add anything without telling me what it does and
+why it fits.

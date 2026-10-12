@@ -1,64 +1,73 @@
 ---
 name: yt-script
 description: >-
-  Write a YouTube video script from a raw idea - hook options off 21
-  formulas, scored, then the full spoken script with the retention beats
-  marked. Use whenever the user wants a video script, a hook, an opening
-  line, "what should I say", "write my next video", or is about to record
-  and does not have the first fifteen seconds yet.
+  Write the ElevenLabs narration for a Cirrus Land restoration video - sparse
+  documentary lines, one 12-16 word line per 8-second Veo clip, mapped to Veo
+  numbers: an imagined-restoration opening, a unique intro per room, silence
+  while the crew works, a closing room-by-room recap and a short CTA. Use for
+  "narration", "voice-over", "VO script", "write the script for <project>".
 ---
 
 # yt-script
 
-One idea into a script somebody finishes.
+The voice-over for one restoration video. Not a talking-head script, not a hook generator.
 
-Two tools live in this folder and both actually run. Use them. Do not eyeball the hook.
+## Read first
 
-```bash
-python3 hookscore.py hooks.txt              # rank your hook options
-python3 hookscore.py --hook "one line"      # score a single one
-```
+1. `youtube/voice.md` (repo root; or `~/.claude/youtube/voice.md`): voice, narration rules, audio mix,
+   ElevenLabs settings, skill rules. It wins over anything here.
+2. `youtube/production-rules.md`: the project's status, rooms, crews and reveals.
+3. Every file in `youtube/narrations/`: past narrations. Nothing in them may be reused.
 
-## Before you write
+## What you need before writing
 
-1. Read `~/.claude/youtube/voice.md` if it exists. That is the user's voice profile: how they talk
-   on camera, the words they never use, who they are talking to, what they will not claim. If it
-   does not exist, ask for **three of their own videos**, read or transcribe them, infer the voice,
-   and write the file. A script in the wrong voice is worse than no script, because they have to
-   read it out loud, or have their cloned voice read it.
-2. Never invent a number, a result or a source. If a figure would strengthen it and you do not have
-   one, ask for it or write the line without it.
+The **Veo shot list** for the parts being narrated: Veo number and what is on screen in it, for the
+opening, each room intro clip and the recap clips. Narration only goes on documentary / room-intro
+clips (and the closing recap). Restoration clips and reveals get no voice.
+
+If the shot list is missing, ask for it. You may draft lines for what is already known, but mark
+their Veo IDs `TBD`, and never describe anything not confirmed to be on screen.
 
 ## The shape
 
-**The first 15 seconds is the whole job.** It does three things or the video leaks: confirm the
-click the title promised, open a question the viewer cannot close, and prove the payoff exists.
+1. **Opening** (2-4 lines): sets the place and the ruin, and includes one line that says plainly this
+   is an imagined, AI-created restoration. Calm, no hype, no question-bait.
+2. **Room intros** (1-3 lines per newly entered room, including the exterior): each one different in
+   structure and wording from every other intro, in this video and in past ones. Describe what the
+   viewer sees as it appears; never announce an action before it is on screen.
+3. **Silence** while the crew works. Write `— silence (work sound only) —` rows for those ranges so
+   the editor sees the gaps.
+4. **Recap** at the end: one line per room, room by room, in order.
+5. **CTA**: one short line. Pick-your-room comment ask and/or subscribe. One ask, not three.
 
-1. **Hook.** Write FIVE against [the 21 formulas](hooks.json), run them through `hookscore.py`,
-   keep the top two, and show the user both with their scores. Never hand over one hook.
-2. **The turn** (0:15-0:45). Say what the video is going to do, in one sentence, and start doing it.
-   No channel intro, no "before we get started", no subscribe pitch. Those are the single most
-   common cause of the 0:30 cliff.
-3. **The body.** One idea per beat. Mark each beat with what is ON SCREEN, not just what is said -
-   a talking head with nothing to look at is a podcast.
-4. **The payoff.** Deliver the thing the hook promised, explicitly, and say that you are delivering
-   it: "that is the prompt, it is in the description".
-5. **The close.** One ask. Not three.
+## Line rules
+
+- One 8 s Veo = one line, **12-16 words** (6-7 s spoken at speed 0.92, 1-2 s of breathing room).
+- Key words in the middle of the line, not at the very start or end, so a trim doesn't cut them.
+- Spoken words only: no brackets, stage directions or labels inside the line. Write numbers and
+  symbols as they should be said.
+- Never claim it is real: no "we found", "our crew", "footage", real place names as the location.
+- Whole script **under 10,000 characters**. New wording every project.
 
 ## What to hand back
 
-- the two best hooks with their scored panels
-- the script, beat by beat, with `[ON SCREEN: ...]` on every beat
-- the runtime estimate at 150 words per minute
-- one line naming which formula the winning hook used and why it fits this idea
-- if `voice.md` says the narration is an AI voice (e.g. an ElevenLabs clone), a **narration
-  block** as well: the spoken words only, ready to paste into the voice tool. No `[ON SCREEN]`
-  lines, beat labels or stage directions in it. Spell out numbers, symbols and acronyms the way
-  they should be said, apply the pronunciation list from `voice.md`, and mark pauses in the syntax
-  `voice.md` names for that model (default: `<break time="0.8s" />`). The `[ON SCREEN]` notes stay
-  in the beat-by-beat script, which becomes the shot list.
+A table, one row per narrated Veo:
+
+| Veo | Line | Target | Delivery | Sync cue |
+| --- | --- | --- | --- | --- |
+| 000 | the spoken line | 6.5 s | calm, slow, warm | starts as the drone clears the trees |
+
+Then a plain **ElevenLabs paste block**: the lines only, in order, one per paragraph.
+
+Before handing it over, save the table to `youtube/narrations/<project>.md` and run:
+
+```bash
+python3 .claude/skills/yt-script/narration_check.py youtube/narrations/<project>.md
+```
+
+It checks words per line, total characters, banned real-footage / hype phrases, and any 5-word run
+reused from another file in `youtube/narrations/`. Fix every FAIL; rewrite every reused run.
 
 ## The gate
 
-Nothing here publishes. This skill writes and you publish. Every output ends in a block the user
-copies, and the last line of every run is the question: **ship it, or change it?**
+Nothing here publishes. End every run with: **ship it, or change it?**
