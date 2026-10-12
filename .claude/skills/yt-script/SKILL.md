@@ -5,7 +5,7 @@ description: >-
   documentary lines, one 12-16 word line per 8-second Veo clip, mapped to Veo
   numbers: an imagined-restoration opening, a unique intro per room, silence
   while the crew works, a closing room-by-room recap and a short CTA. Use for
-  "narration", "voice-over", "VO script", "write the script for <project>".
+  "narration", "voice-over", "VO script", "write the script for this restoration".
 ---
 
 # yt-script
